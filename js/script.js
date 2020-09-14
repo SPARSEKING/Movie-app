@@ -1,8 +1,22 @@
+'use strict';
 
-let answers = [];
+const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
 
-answers[0] = prompt("Как вас зовут?", "");
-answers[1] = prompt("В каком городе живете?", "");
-answers[2] = prompt("Скольк вам лет?", "");
+const personalMovieDB = {
 
-document.write(answers)
+        count: numberOfFilms,
+        movies: {},
+        actors: {},
+        genres: [],
+        privat: false
+};
+
+const lastFilm1 = prompt ("Один из последних просмотренных фильмов?", ""),
+      estimate1 = prompt ("На сколько оцените его?", ""),
+      lastFilm2 = prompt ("Один из последних просмотренных фильмов?", ""),
+      estimate2 = prompt ("На сколько оцените его?", "");
+
+personalMovieDB.movies[lastFilm1] = estimate1;
+personalMovieDB.movies[lastFilm2] = estimate2;
+
+document.write(personalMovieDB.movies);
